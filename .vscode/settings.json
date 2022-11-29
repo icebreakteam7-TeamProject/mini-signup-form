@@ -1,6 +1,6 @@
 {
     "editor.fontFamily": "D2Coding, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 14,
+    "editor.fontSize": 20,
     "editor.tabSize": 2,
     "files.autoSave": "onWindowChange",
     "prettier.configPath": ".prettierrc.json",
