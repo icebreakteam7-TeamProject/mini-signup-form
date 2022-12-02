@@ -14,6 +14,8 @@ const $cancelBtn = document.getElementById('cancel-btn')
 const $approveBtn = document.getElementById('approve-btn')
 const $confirmId = document.getElementById('confirm-id')
 const $confirmPw = document.getElementById('confirm-pw')
+const $increaseFontBtn = document.getElementById('increase-font-btn')
+const $decreaseFontBtn = document.getElementById('decrease-font-btn')
 
 window.addEventListener('load', () => $id.focus())
 
@@ -132,3 +134,29 @@ const approveComplete = () => {
     $pwCheck.value = ''
 }
 $approveBtn.addEventListener('click', approveComplete)
+
+// 5. 폰트 크기 조절 버튼
+
+const $html = document.documentElement
+
+const increaseFont = () => {
+    const fontSize = parseFloat(window.getComputedStyle($html).fontSize)
+    if (fontSize >= 20) {
+        $increaseFontBtn.disabled = true
+    } else {
+        $html.style.fontSize = fontSize + 1
+    }
+}
+$increaseFontBtn.addEventListener('click', increaseFont)
+
+const decreaseFont = () => {
+    const fontSize = parseFloat(window.getComputedStyle($html).fontSize)
+    if (fontSize <= 12) {
+        $decreaseFontBtn.disabled = true
+    } else {
+        $increaseFontBtn.disabled = false
+        $html.style.fontSize = fontSize - 1
+    }
+}
+
+$decreaseFontBtn.addEventListener('click', decreaseFont)
